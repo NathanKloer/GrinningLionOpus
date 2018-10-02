@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Found Pets</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
+                <a class="navbar-brand" href="#">Found Pets</a>
+                
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="found-form.html">Found</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lost-form.html">Lost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Search</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+    
+        <!-- jumbotron -->
+        <div class="jumbotron jumbotron-fluid jumbo-bg-img">
+                <div class="container">
+            <h1 class="text-center title">Found Pets</h1>
+            <p class="text-center top-text">The most important family reunion.</p>
+            <p class="text-center top-text">Find lost pets. Report found pets.</p>
+            <div class="top-spacer"></div>
+            <p class="text-center">
+                <a class="btn btn-lg teal-button" href="data.html" role="button">Data</a>
+            </p>
+            <p class="text-center top-text" style="margin-bottom: .5rem">Where are pets lost and found?</p>
+            </div>
+        </div>
+
+        <div class="main">
+
+        <div class="container container-fluid">
+            <div class="card">
+                <div class="card-header card-head-styled">
+                    Search Pets
+                </div>
+                <div class="card-body">
+                        <form>
+                                <!-- User can select pet as a lost animal or a found animal -->
+                                <div class="form-group">
+                                    <label for="statusSelection">Lost or Found</label>
+                                        <select class="form-control" id="selectStatus">
+                                            <option>Lost</option>
+                                            <option>Found</option>
+                                        </select>
+                                </div>
+
+                                <!-- assuming we are limiting species to cat or dog -->
+                                <div class="form-group">
+                                    <label for="speciesSelection">Species</label>
+                                        <select class="form-control" id="selectSpecies">
+                                            <option>Cat</option>
+                                            <option>Dog</option>
+                                        </select>
+                                </div>
+
+                                <!-- user can search with one or many coat colors -->
+                                <div class="form-group">
+                                    <div><label for="coatColor">Coat Color</label></div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="brown" value="option1">
+                                    <label class="form-check-label" for="color">brown</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="black" value="option2">
+                                    <label class="form-check-label" for="color">black</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="white" value="option3">
+                                    <label class="form-check-label" for="color">white</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="yellow" value="option4">
+                                    <label class="form-check-label" for="color">yellow</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="orange" value="option5">
+                                    <label class="form-check-label" for="color">orange</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="gray" value="option6">
+                                    <label class="form-check-label" for="color">gray</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="other" value="option7">
+                                    <label class="form-check-label" for="color">other</label>
+                                </div>
+                                </div>
+
+                                <!-- location is searched by zip code to give a general area -->
+                                <div class="form-group">
+                                        <div><label for="lastSeenGroup">Last Seen Near or</label><button type="image-submit" class="btn form-button">Use my Location</button>
+                                        <div class="form-row">
+                                        
+                                        <div class="form-group col-md-2">
+                                          <label for="inputZip">Zip</label>
+                                          <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                      </div>
+                                      
+                                <button type="submit" class="btn teal-button">Submit</button>
+                              </form>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+            <!-- this area can be hidden until results are created or shown at all times -->
+            <div class="card card-centered">
+                <div class="card-header card-head-styled">
+                    Search Results
+                </div>
+                <div class="card-body">
+                    <!-- this is an example of what a listed result will look like when written to the DOM -->
+                   <div class="card card-centered">
+                        <div class="card-body">
+
+                            <div class="row">
+
+                            <div class="col-lg-4">
+                                <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001000/Beagle-On-White-01-400x267.jpg">
+                            </div>
+
+                            <div class="col-lg-4">
+                                <p class="pet-title">Lost/Found Dog/Cat</p>
+                                <div class="pet-result-info"><p>Info Dump Here</p></div>
+                            </div>
+
+                            <!-- We can have a small map area here with a marker on the location of last seen -->
+                            <div class="col-lg-4">
+                                <span>map here</span>
+                            </div>
+
+                            </div>
+
+                        </div>
+                   </div>
+                </div>
+            </div>
+                
+        </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer navbar-fixed-bottom my-footer">
+            <span><p class="text-center footer-text">Place sticky footer content here.</p></span>
+        </div>
+            
+
+    
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+</body>
+
+</html>

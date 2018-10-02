@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Found Pets</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
+                <a class="navbar-brand" href="#">Found Pets</a>
+                
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="found-form.html">Found</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lost-form.html">Lost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Search</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+    
+        <!-- jumbotron -->
+        <div class="jumbotron jumbotron-fluid jumbo-bg-img">
+                <div class="container">
+            <h1 class="text-center title">Found Pets</h1>
+            <p class="text-center top-text">The most important family reunion.</p>
+            <p class="text-center top-text">Find lost pets. Report found pets.</p>
+            <div class="top-spacer"></div>
+            <p class="text-center">
+                <a class="btn btn-lg teal-button" href="data.html" role="button">Data</a>
+            </p>
+            <p class="text-center top-text" style="margin-bottom: .5rem">Where are pets lost and found?</p>
+            </div>
+        </div>
+
+        <div class="main">
+
+        <div class="container container-fluid">
+            <div class="card">
+                <div class="card-header card-head-styled">
+                    Lost Pet Profile
+                </div>
+                <div class="card-body">
+                        <form>
+                                <!-- User's Name -->
+                                <div class="form-group">
+                                    <label for="contributorName">Contributor</label>
+                                <div class="row">
+                                    <div class="col">
+                                            <label for="firstName">First Name</label>
+                                        <input type="text" class="form-control" placeholder="First name">
+                                    </div>
+                                    <div class="col">
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last name">
+                                    </div>
+                                </div>
+                                </div>
+
+                                <!-- User's contact info -->
+                                <div class="form-group">
+                                  <label for="InputEmail1">Email Address</label>
+                                  <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+
+                                <!-- Pet's Name -->
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Pet Name</label>
+                                    <input type="text" class="form-control" id="petName" placeholder="Sunshine">
+                                </div>
+
+                                <!-- Assuming we're going simple with cat or dog only -->
+                                <div class="form-group">
+                                    <label for="speciesSelection">Species</label>
+                                        <select class="form-control" id="selectSpecies">
+                                            <option>Cat</option>
+                                            <option>Dog</option>
+                                        </select>
+                                </div>
+
+                                <!-- Place to submit image. I have the url space as a back-up and the button as a place holder. -->
+                                <div class="form-group">
+                                    <label for="imgURL">Image URL or</label> <button type="image-submit" class="btn form-button">Upload Image</button>
+                                        <input type="text" class="form-control" id="imgSubmit" placeholder="https://dogs.com/example.jpg">
+                                </div>
+
+                                <!-- Color inputs with one or multiple inputs -->
+                                <div class="form-group">
+                                    <div><label for="coatColor">Coat Color</label></div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="brown" value="option1">
+                                    <label class="form-check-label" for="color">brown</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="black" value="option2">
+                                    <label class="form-check-label" for="color">black</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="white" value="option3">
+                                    <label class="form-check-label" for="color">white</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="yellow" value="option4">
+                                    <label class="form-check-label" for="color">yellow</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="orange" value="option5">
+                                    <label class="form-check-label" for="color">orange</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="gray" value="option6">
+                                    <label class="form-check-label" for="color">gray</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="other" value="option7">
+                                    <label class="form-check-label" for="color">other</label>
+                                </div>
+                                </div>
+
+                                <!-- Address form with alternate button so that user can input current location via maps api -->
+                                <div class="form-group">
+                                        <div><label for="lastSeenGroup">Last Seen At/Near This Address or</label><button type="image-submit" class="btn form-button">Use my Location</button>
+                                        </div>
+                                        <label for="inputAddress">Address</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="inputAddress2">Address 2</label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                      </div>
+                                      <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                          <label for="inputCity">City</label>
+                                          <input type="text" class="form-control" id="inputCity">
+                                        </div>
+                                        <!-- I only included Georgia and neighboring states since this is an Atlanta Web App -->
+                                        <div class="form-group col-md-4">
+                                          <label for="inputState">State</label>
+                                          <select id="inputState" class="form-control">
+                                            <option selected>Georgia</option>
+                                            <option>Alabama</option>
+                                            <option>Florida</option>
+                                            <option>Tennessee</option>
+                                            <option>North Carolina</option>
+                                            <option>South Carolina</option>
+                                          </select>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                          <label for="inputZip">Zip</label>
+                                          <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                      </div>
+
+                                <!-- Place for addition info for people to read when browsing listings on their own -->
+                                <div class="form-group">
+                                    <label for="comments">Comments</label>
+                                    <textarea class="form-control" id="comments" rows="3" placeholder="Notable Features, Health of animal, etc."></textarea>
+                                </div>
+                                      
+                                <button type="submit" class="btn teal-button">Submit</button>
+                              </form>
+                </div>
+            </div>
+        </div>
+        </div>
+
+            
+        <!-- footer -->
+        <div class="footer navbar-fixed-bottom my-footer">
+            <span><p class="text-center footer-text">Place sticky footer content here.</p></span>
+        </div>
+            
+
+    
+
+
+<script src="https://code.jquery.com/jquery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+.title {
+    color: white;
+    font-size: 400%;
+}
+
+.top-text {
+    color: white;
+    margin-bottom: .1rem;
+    margin-top: .1rem;
+}
+
+.top-spacer {
+    margin: 2rem 0;
+}
+
+.nav-styled {
+    background-color: #096971;
+}
+
+.jumbo-bg-img {
+    background-image: url("../images/jumbo-image.png");
+    
+}
+
+.teal-button {
+    background-color: #3da4ab;
+    color: white;
+    font-weight: bold;
+    padding: .5rem 5rem .5rem 5rem;
+}
+
+.yellow-button {
+    background-color: #f6cd61;
+    color: white;
+    font-weight: bold;
+    padding: .5rem 5rem .5rem 5rem;
+}
+
+.red-button {
+    background-color: #fe8a71;
+    color: white;
+    font-weight: bold;
+    padding: .5rem 5rem .5rem 5rem; 
+}
+
+
+.my-footer {
+    background-color: #096971;
+    margin: 19rem 0 0 0;
+    padding: .05rem 0;
+}
+
+.footer-text {
+    padding: .5rem 0 0 0;
+    color: white;
+    opacity: 0.5;
+}
+
+.card-centered {
+    margin: 2rem auto 1rem auto;
+}
+
+.form-button {
+    background-color: #f6cd61;
+    color: white;
+    font-weight: bold;
+    margin: .5rem;
+}
+
+.card-head-styled {
+    background-color: #3da4ab;
+    color: white;
+    font-weight: bold;
+}
+
+.pet-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
