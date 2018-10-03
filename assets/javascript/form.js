@@ -28,15 +28,25 @@ $(document).ready(function() {
     var state = "";
     var zip = 0;
     var comments = "";
-    console.log(firstName);
 
-    // Handle button click
+    // Handle image upload
+
+    // Handle geolocation button
+    $("#geolocation").on("click", function(event) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+            console.log(longitude);
+            console.log(latitude);
+        });
+    });
+
+    // Handle submission button
     $("#submit-form").on("click", function(event) {
         event.preventDefault();
 
         // Capture inputs in variables
-        firstName = $("#first-name").val().trim();
-        console.log(firstName);
+        firstName = $("#firstName").val().trim();
         lastName = $("#lastName").val().trim();
         email = $("#emailInput").val().trim();
         petName = $("#petName").val().trim();
@@ -48,7 +58,6 @@ $(document).ready(function() {
         state = $("#inputState").val().trim();
         zip = $("#inputZip").val().trim();
         comments = $("#comments").val().trim();
-        console.log(firstName);
 
         // Store in object
         var newPet = {
@@ -90,7 +99,5 @@ $(document).ready(function() {
         $("#comments").val("");
 
         // Handle errors
-    },  function(errorObject) {
-            console.log("Errors handled: " + errorObject.code);
     });
 });

@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col">
                                     <label for="firstName">First Name</label>
-                                    <input type="text" class="form-control" id="first-name" placeholder="First name">
+                                    <input type="text" class="form-control" id="firstName" placeholder="First name">
                                 </div>
                                 <div class="col">
                                     <label for="lastName">Last Name</label>
@@ -97,9 +97,7 @@
 
                         <!-- Place to submit image. I have the url space as a back-up and the button as a place holder. -->
                         <div class="form-group">
-                            <label for="imgURL">Image URL or</label> <button type="image-submit" class="btn form-button">Upload
-                                Image</button>
-                            <input type="text" class="form-control" id="imgSubmit" placeholder="https://dogs.com/example.jpg">
+                            <input type="hidden" role="uploadcare-uploader" name="content" data-crop="500x500 upscale" data-images-only="true" />
                         </div>
 
                         <!-- Color inputs with one or multiple inputs -->
@@ -138,8 +136,7 @@
 
                         <!-- Address form with alternate button so that user can input current location via maps api -->
                         <div class="form-group">
-                            <div><label for="lastSeenGroup">Last Seen At/Near This Address or</label><button type="image-submit"
-                                    class="btn form-button">Use my Location</button>
+                            <div><label for="lastSeenGroup">Last Seen At/Near This Address or</label><input type="button" class="btn form-button" id="geolocation" value="Use my location"></input>
                             </div>
                             <label for="inputAddress">Address</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
@@ -193,6 +190,12 @@
     </div>
 
     <!-- JavaScript -->
+    <script>
+        UPLOADCARE_LOCALE = "en";
+        UPLOADCARE_TABS = "file url facebook gphotos instagram";
+        UPLOADCARE_PUBLIC_KEY = "c18104c4940c2599e66b";
+    </script>
+    <script charset="utf-8" src="https://ucarecdn.com/libs/widget/3.6.1/uploadcare.full.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
     <script src="assets/javascript/form.js"></script>
