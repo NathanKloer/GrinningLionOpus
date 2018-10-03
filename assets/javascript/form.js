@@ -28,13 +28,15 @@ $(document).ready(function() {
     var state = "";
     var zip = 0;
     var comments = "";
+    console.log(firstName);
 
     // Handle button click
     $("#submit-form").on("click", function(event) {
         event.preventDefault();
 
         // Capture inputs in variables
-        firstName = $("#firstName").val().trim();
+        firstName = $("#first-name").val().trim();
+        console.log(firstName);
         lastName = $("#lastName").val().trim();
         email = $("#emailInput").val().trim();
         petName = $("#petName").val().trim();
