@@ -12,97 +12,102 @@
 </head>
 
 <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
-                <a class="navbar-brand" href="#">Found Pets</a>
-                
-              
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="found-form.html">Found</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lost-form.html">Lost</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="search.html">Search</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
+    <a class="navbar-brand" href="#">Found Pets</a>
 
-        <!-- Jumbotron -->
-        <div class="jumbotron jumbotron-fluid jumbo-bg-img">
-                <div class="container">
-            <h1 class="text-center title">Found Pets</h1>
-            <p class="text-center top-text">The most important family reunion.</p>
-            <p class="text-center top-text">Find lost pets. Report found pets.</p>
-            <div class="top-spacer"></div>
-            <p class="text-center">
-                <a class="btn btn-lg teal-button" href="data.html" role="button">Data</a>
-            </p>
-            <p class="text-center top-text" style="margin-bottom: .5rem">Where are pets lost and found?</p>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="found-form.html">Found</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="lost-form.html">Lost</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="search.html">Search</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Jumbotron -->
+  <div class="jumbotron jumbotron-fluid jumbo-bg-img">
+    <div class="container">
+      <h1 class="text-center title">Found Pets</h1>
+      <p class="text-center top-text">The most important family reunion.</p>
+      <p class="text-center top-text">Find lost pets. Report found pets.</p>
+      <div class="top-spacer"></div>
+      <p class="text-center">
+        <a class="btn btn-lg teal-button" href="data.html" role="button">Data</a>
+      </p>
+      <p class="text-center top-text" style="margin-bottom: .5rem">Where are pets lost and found?</p>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+
+          <!-- Found Pets Card with button -->
+          <div class="card card-centered" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/found-img.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Found a Pet</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a href="found-form.html" class="btn yellow-button">Found</a>
             </div>
+          </div>
         </div>
+        <div class="col-lg-4">
 
-        <div class="main">
-
-        <div class="container container-fluid">
-                <div class="row">
-                  <div class="col-lg-4">
-                        
-                        <!-- Found Pets Card with button -->
-                        <div class="card card-centered" style="width: 18rem;">
-                                <img class="card-img-top" src="assets/images/found-img.png" alt="Card image cap">
-                                <div class="card-body text-center">
-                                  <h5 class="card-title">Found a Pet</h5>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="found-form.html" class="btn yellow-button">Found</a>
-                                </div>
-                              </div>
-                  </div>
-                  <div class="col-lg-4">
-                        
-                        <!-- Lost Pets Card with button -->
-                        <div class="card card-centered" style="width: 18rem;">
-                                <img class="card-img-top" src="assets/images/lost-img.png" alt="Card image cap">
-                                <div class="card-body text-center">
-                                  <h5 class="card-title">Lost a Pet</h5>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="lost-form.html" class="btn red-button">Lost</a>
-                                </div>
-                              </div>
-                  </div>
-                  <div class="col-lg-4">
-                        
-                        <!-- Searching/Browsing Card with button -->
-                        <div class="card card-centered" style="width: 18rem;">
-                                <img class="card-img-top" src="assets/images/search-img.png" alt="Card image cap">
-                                <div class="card-body text-center">
-                                  <h5 class="card-title">Search Pets</h5>
-                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="search.html" class="btn teal-button">Search</a>
-                                </div>
-                              </div>
-                  </div>
-                </div>
-              </div>
+          <!-- Lost Pets Card with button -->
+          <div class="card card-centered" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/lost-img.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Lost a Pet</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a href="lost-form.html" class="btn red-button">Lost</a>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-4">
 
-        <!-- footer -->            
-        <div class="footer navbar-fixed-bottom my-footer">
-            <span><p class="text-center footer-text">Place sticky footer content here.</p></span>
+          <!-- Searching/Browsing Card with button -->
+          <div class="card card-centered" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/search-img.png" alt="Card image cap">
+            <div class="card-body text-center">
+              <h5 class="card-title">Search Pets</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <a href="search.html" class="btn teal-button">Search</a>
+            </div>
+          </div>
         </div>
-            
+      </div>
+    </div>
+  </div>
 
-    
+  <!-- footer -->
+  <div class="footer navbar-fixed-bottom my-footer">
+    <span>
+      <p class="text-center footer-text">Place sticky footer content here.</p>
+    </span>
+  </div>
 
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+  <script src="assets/javascript/form.js"></script>
 
-<script src="https://code.jquery.com/jquery.js"></script>
 </body>
 
 </html>
