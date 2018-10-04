@@ -13,13 +13,15 @@ $(document).ready(function() {
 
     // Initialize variables
     var database = firebase.database();
+    var type = "";
     var firstName = "";
     var lastName = "";
     var email = "";
     var petName = "";
     var species = "";
-    var imageURL = "";
-    var coatColors = "";
+    var upload = "";
+    var imageURL = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjVgoTE8O3dAhXF3lMKHTBiDZYQjRx6BAgBEAU&url=https%3A%2F%2Fwiscoyforanimals.com%2Fdepartments%2F1024%2Fcat&psig=AOvVaw0uShJLYJxI-xBbhQ7goRcN&ust=1538780044957789";
+    var coatColors = ["black", "brown"];
     var latitude = 0;
     var longitude = 0;
     var address = "";
@@ -30,6 +32,12 @@ $(document).ready(function() {
     var comments = "";
 
     // Handle image upload
+    file.done(function(fileInfo) {
+        // Upload has successfully completed and a file is ready.
+        console.log(response);
+      }).fail(function(error, fileInfo) {
+        // Upload failed, or something else went wrong, a file is not ready.
+      });
 
     // Handle geolocation button
     $("#geolocation").on("click", function(event) {
@@ -51,7 +59,8 @@ $(document).ready(function() {
         email = $("#emailInput").val().trim();
         petName = $("#petName").val().trim();
         species = $("#selectSpecies").val().trim();
-        
+        upload = $("upload-care");
+
         address = $("#inputAddress").val().trim();
         addressTwo = $("#inputAddress2").val().trim();
         city = $("#inputCity").val().trim();
@@ -66,6 +75,7 @@ $(document).ready(function() {
             storedEmail: email,
             storedPetName: petName,
             storedSpecies: species,
+            /* storedUpload: upload, */
             storedImageURL: imageURL,
             storedCoatColors: coatColors,
             storedLatitude: latitude,
