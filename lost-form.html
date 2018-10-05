@@ -57,7 +57,7 @@
                     Lost Pet Profile
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form id="lost-or-found" lostorfound="lost">
                         <!-- User's Name -->
                         <div class="form-group">
                             <label for="contributorName">Contributor</label>
@@ -101,7 +101,7 @@
                         </div>
 
                         <!-- Color inputs with one or multiple inputs -->
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div><label for="coatColor">Coat Color</label></div>
 
                             <div class="form-check form-check-inline">
@@ -132,6 +132,20 @@
                                 <input class="form-check-input" type="checkbox" id="other" value="option7">
                                 <label class="form-check-label" for="color">other</label>
                             </div>
+                        </div> -->
+
+                        <!-- Color inputs with one or multiple inputs -->
+                        <div class="form-group">
+                            <div><label for="coatColor">Coat Color(s)</label></div>
+                            <select class="custom-select" id="coat-color" multiple>
+                                <option value="brown">Brown</option>
+                                <option value="black">Black</option>
+                                <option value="white">White</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="orange">Orange</option>
+                                <option value="Gray">Gray</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
 
                         <!-- Address form with alternate button so that user can input current location via maps api -->
