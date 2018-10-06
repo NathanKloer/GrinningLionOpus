@@ -78,3 +78,8 @@
     font-weight: bold;
     font-size: 150%;
 }
+
+#upload-validation {
+    color: red;
+    display: none;
+}
