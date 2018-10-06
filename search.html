@@ -195,19 +195,19 @@
         <script type="text/javascript">
             
         config = {
-            apiKey: "AIzaSyDcy6KUvKqXpNWI65gnl57TF-pQL57FlWs",
-            authDomain: "pet-finder-8e4bf.firebaseapp.com",
-            databaseURL: "https://pet-finder-8e4bf.firebaseio.com",
-            projectId: "pet-finder-8e4bf",
-            storageBucket: "pet-finder-8e4bf.appspot.com",
-            messagingSenderId: "67912018638"
+        apiKey: "AIzaSyDcy6KUvKqXpNWI65gnl57TF-pQL57FlWs",
+        authDomain: "pet-finder-8e4bf.firebaseapp.com",
+        databaseURL: "https://pet-finder-8e4bf.firebaseio.com",
+        projectId: "pet-finder-8e4bf",
+        storageBucket: "pet-finder-8e4bf.appspot.com",
+        messagingSenderId: "67912018638"
         };
         firebase.initializeApp(config);
     
-        var database = firebase.database()
+        var database = firebase.database();
             
-        database.ref().on("child_added", function(childSnapshot) {
-            
+        var searchAgainst = database.ref().on("child_added", function(childSnapshot) {
+        
             firstName = childSnapshot.val().storedFirstName;
             lastName = childSnapshot.val().storedLastName;
             email = childSnapshot.val().storedEmail;
@@ -223,41 +223,44 @@
             state = childSnapshot.val().storedState;
             zip = childSnapshot.val().storedZip;
             comments = childSnapshot.val().storedComments;
-            
+        
+            //console.log(firstName)
         // Handle errors
         },  function(errorObject) {
         console.log("Errors handled: " + errorObject.code);
         });
         
+        
     // get the options for Lost/Found, species, and make an array for the colors
     
         $("#submit-btn").on("click", function(event) {
             event.preventDefault();
-            
+            //variables to store values
             var petStatus = ""
             var petSpecies = ""
-            var petCoat
-            
+            //Lost Or Found Input Value
             var lostOrFound = $("#selectStatus option:selected").val();
             if (lostOrFound === "1") {
                 petStatus = "Lost" 
             } else {
                 petStatus = "Found"
             };
-    
+            //Cat Or Dog Input Value
             var catOrDog = $("#selectSpecies option:selected").val();
             if  (catOrDog === "1") {
                 petSpecies = "Cat"
             } else {
                 petSpecies = "Dog"
             };
+            //Pet Color Input Value
             var petColor = []
                 $("#coat-color option:selected").each(function() {
                     petColor.push(this.value)
                 })
-
+            //Zip Input Value
             var inputZip = $("#inputZip").val();
-    
+            
+            //Temporary/Local Storage of Data
             var newSearch = {
                 status: petStatus,
                 species: petSpecies,
@@ -266,11 +269,41 @@
             }
             console.log("Status: " + newSearch.status);
             console.log("Species: " + newSearch.species);
-            console.log("Color: " + newSearch.color)
+            console.log("Color: " + newSearch.color);
             //console.log("Last Seen: " + seen)
-            console.log("Zip: " + newSearch.zip)
-        })
+            console.log("Zip: " + newSearch.zip);
+            console.log("test " + searchAgainst);
+            
+            //database.ref().once("value"), function(childSnapshot) {
+                // This is a snapshot of all records
+                //var allRecords = childSnapshot.val();
+                //console.log("submit snapshot", allRecords);
+            var i;
+            for (i = 0; i < database.childSnapshot.val().storedCoatColors.length; i++) {
+                    newSearch.color[i]
+                    console.log(newSearch.color[i])
+                }
+            });
+            
+            //var arrRecords = [];
+            //var keys = Object.keys(allRecords);
+            //keys.forEach(function(key) {
+                //var record = allRecords[key];
+                //arrRecords.push(record);
+            //});
+
+            //var filtered = arrRecords.filter(function (record) {
+                //return (
+                   // record.name === newSearch.status,
+                   // record.color === newSearch.petSpecies,
+                //);
+            //});
+        //displayFilteredResults(filtered);
+        //});
         
+    
+
+
         database.ref().on("child_added", function(childSnapshot) {
             var firstName = childSnapshot.val().storedFirstName;
             var lastName = childSnapshot.val().storedLastName;
@@ -288,7 +321,7 @@
             var zip = childSnapshot.val().storedZip;
             var comments = childSnapshot.val().storedComments;
         })
-    
+
         </script>
 </body>
 
