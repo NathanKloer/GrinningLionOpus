@@ -251,8 +251,7 @@
 
                         //console.log(database.ref("pet-finder-8e4bf").storedFirstName)
             
-            //for some reason, coatColors is returning the results of the newest entry, and the previous entry. 
-            //This accumulates to all into the last entry.
+            
             console.log("Name "+ firstName + " " + lastName);
             var coatArr = [];
             coatArr.push(coatColors);
@@ -309,15 +308,17 @@
                     tempZip: inputZip,
                 }
                 
-                //this if.statement should match the newSearch and the accountArray. 
+                //hitting the submit key should match should console.log accounts that match the search input species. 
                 //If an Account Matches, it will appear in the console.log
                 //I think there might be something wrong with the form? I had to delete some
                 //of the color entries from firebase but it may have messed with the value
                 //of the array
 
                 if (newSearch.species === accountsArray[1] 
-                //&& newSearch.color === coatArr 
+                //&& newSearch.color === coatArr
+                //&& newSearch.tempZip === accountsArray[2] 
                 ){
+                    //when run by hitting submit, this will display accounts that match species. 
                     console.log("[~~Match!~~]");
                     console.log("Name: " + accountsArray[0]);
                     console.log("Species: " + newSearch.species);
