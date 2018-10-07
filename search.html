@@ -154,9 +154,7 @@
                     <!-- this is an example of what a listed result will look like when written to the DOM -->
                    <div class="card card-centered">
                         <div class="card-body">
-
-                            <div class="row">
-
+                            <table class="table table-sm table-hover" id=pet-table>
                             <div class="col-lg-4">
                                 <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001000/Beagle-On-White-01-400x267.jpg">
                             </div>
@@ -165,7 +163,13 @@
                                 <p class="pet-title">Lost/Found Dog/Cat</p>
                                 <div class="pet-result-info"><p>Info Dump Here</p></div>
                             </div>
-
+                            <thead>
+                                <tr>
+                                <th scope="col">Pet Matches</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
                             <!-- We can have a small map area here with a marker on the location of last seen -->
                             <div class="col-lg-4">
                                 <span>map here</span>
@@ -206,8 +210,9 @@
 
         var database = firebase.database();
         
-        //website reads database when laded, and sets the relevent fields as variables. This is done to solve scope issues
+        //website reads database when laded, and identifies the relevent fields. This is done to solve scope issues
         //that happened when it was put inside the .on(click) event
+        
 
         database.ref().on("child_added", function (childSnapshot) {
 
@@ -265,9 +270,9 @@
 
             
         
-    // get the options for Lost/Found, species, and make an array for the colors
+        // get the options for Lost/Found, species, and make an array for the colors
     
-        $("#submit-btn").on("click", function (event) {
+            $("#submit-btn").on("click", function (event) {
             //console.clear()
 
                 //console.log("snapshot", firstName)
@@ -313,29 +318,64 @@
                 //I think there might be something wrong with the form? I had to delete some
                 //of the color entries from firebase but it may have messed with the value
                 //of the array
+                
+                var searchFilter = " "
+                var coatResult = " "
+                var speciesResult = " "
+                var zipResult = " "
+
+                if (coatArr.indexOf(newSearch.color[0]) === "-1"
+                    && coatArr.indexOf(newSearch.color[1]) === "-1"
+                    && coatArr.indexOf(newSearch.color[2]) === "-1"
+                ){
+                    coatResult = 1;
+                } else {
+                    coatResult = 0;
+                }
 
                 if (newSearch.species === accountsArray[1] 
-                //&& newSearch.color === coatArr
+                //&& [newSearch.color].includes(coatArr)
+                //&& coatArr.indexOf(newSearch.color) != 0
+                //&& $.inArray(newSearch.color, coatArr) === 0
+                && coatResult === 1
                 //&& newSearch.tempZip === accountsArray[2] 
-                ){
+                ) {
                     //when run by hitting submit, this will display accounts that match species. 
                     console.log("[~~Match!~~]");
                     console.log("Name: " + accountsArray[0]);
                     console.log("Species: " + newSearch.species);
                     console.log("Color: " + coatArr);
+                    console.log("Color Searched: " + newSearch.color);
                     console.log("Status: " + newSearch.status);
                     console.log("Zip: " + newSearch.tempZip);
 
-                
-                //console.log("~~~~~~~Search Match~~~~~~~ = True!");;
-                }
+
+                    // Change the HTML to reflect
+                    var newRow = $("<tr>").append(
+                        $("<td>").text(accountsArray[0]),
+                        //<th scope="col">Species</th>,
+                        $("<td>").text(accountsArray[3]),
+                        //<th scope="col">Color</th>,
+                        $("<td>").text(newSearch.species),
+                        $("<td>").text(newSearch.tempZip),        
+                    );
+                    $("#pet-table > tbody").append(newRow);
+
+
+
+
+                    //console.log("~~~~~~~Search Match~~~~~~~ = True!");;
+                } else { 
+                    console.log("No Match")
+                };
+
                 //else {console.log("[xNo_Matchx]")
                     //};
 
                 
                 
                 //coatColors = undefined
-            });
+        });
 
                 //grab data from firebase
                 //database.ref().on("child_added", function (childSnapshot) {
@@ -386,7 +426,7 @@
                     //console.log("Species: " + species);
                     //console.log("Zip: " + zip)
                     //console.log("Search info in Array ["  + accountsArray +"]")
-                });
+        });
                 //console.log("{(*=====END=====*)}")
                 //console.log(accountsArray)
                     
