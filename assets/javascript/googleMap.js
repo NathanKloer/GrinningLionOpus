@@ -1,11 +1,11 @@
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementsByClassName('map'), {
       zoom: 8,
       center: {lat: 33.7490, lng: -84.3880}
     });
     var geocoder = new google.maps.Geocoder();
   
-    document.getElementById('submitButton').addEventListener('click', function() {
+    document.getElementById('search-btn').addEventListener('click', function() {
       geocodeAddress(geocoder, map);
     });
   }

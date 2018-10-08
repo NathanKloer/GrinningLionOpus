@@ -138,7 +138,7 @@
                                       </div>
                                       
 
-                                <button type="submit" class="btn teal-button" id="submit-btn">Submit</button>
+                                <button type="submit" class="btn teal-button" id="search-btn">Submit</button>
 
                               </form>
                 </div>
@@ -154,36 +154,43 @@
                 </div>
                 <div class="card-body">
                     <!-- this is an example of what a listed result will look like when written to the DOM -->
-                   <div class="card card-centered">
+                   <div class="card card-centered" id="listing-holder">
                         <div class="card-body">
-                            <table class="table table-sm table-hover" id=pet-table>
+                            <div class="row">
                             <div class="col-lg-4">
                                 <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001000/Beagle-On-White-01-400x267.jpg">
                             </div>
 
                             <div class="col-lg-4">
-                                <p class="pet-title">Lost/Found Dog/Cat</p>
-                                <div class="pet-result-info"><p>Info Dump Here</p></div>
+                                <div><p class="pet-title">Lost/Found Dog/Cat</p></div>
+                                <div class="pet-result-info">
+                                    <div><p>Pet Name</p></div>
+                                    <div><p>Contributor Name</p></div>
+                                    <div><p>Contributor Contact</p></div>
+                                    <div><p>Coat Color</p></div>
+                                    <div><p>Comments</p></div>
+                                </div>
                             </div>
-                            <thead>
-                                <tr>
-                                <th scope="col">Pet Matches</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
+                            
                             <!-- We can have a small map area here with a marker on the location of last seen -->
-                            <div id="map" class="col-lg-4">
+                            <!-- had to change map to a class not an ID -->
+                            <div class="col-lg-4 map">
                                 <span>map here</span>
                             </div>
-
-                            </div>
-
                         </div>
+                        </div>
+                        
                    </div>
                 </div>
             </div>
-                
+                <table class="table table-sm table-hover" id=pet-table></table>
+                   <thead>
+                    <tr>
+                    <th scope="col">Pet Matches</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
         </div>
         </div>
 
