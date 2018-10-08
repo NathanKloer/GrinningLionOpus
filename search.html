@@ -63,8 +63,9 @@
                                 <div class="form-group">
                                     <label for="statusSelection">Lost or Found</label>
                                         <select class="form-control" id="selectStatus">
-                                            <option>Lost</option>
-                                            <option>Found</option>
+                                            <option>-Select-</option>
+                                            <option value = "1">Lost</option>
+                                            <option value = "2">Found</option>
                                         </select>
                                 </div>
 
@@ -72,12 +73,13 @@
                                 <div class="form-group">
                                     <label for="speciesSelection">Species</label>
                                         <select class="form-control" id="selectSpecies">
-                                            <option>Cat</option>
-                                            <option>Dog</option>
+                                            <option>-Select-</option>
+                                            <option value = "1">Cat</option>
+                                            <option value = "2">Dog</option>
                                         </select>
                                 </div>
 
-                                <!-- user can search with one or many coat colors -->
+                                <!-- user can search with one or many coat colors 
                                 <div class="form-group">
                                     <div><label for="coatColor">Coat Color</label></div>
 
@@ -109,6 +111,19 @@
                                     <input class="form-check-input" type="checkbox" id="other" value="option7">
                                     <label class="form-check-label" for="color">other</label>
                                 </div>
+                                </div>-->
+
+                                <div class="form-group">
+                                    <div><label for="coatColor">Coat Color(s)</label></div>
+                                        <select class="custom-select" id="coat-color" multiple>
+                                            <option value="brown">Brown</option>
+                                            <option value="black">Black</option>
+                                            <option value="white">White</option>
+                                            <option value="yellow">Yellow</option>
+                                            <option value="orange">Orange</option>
+                                            <option value="Gray">Gray</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                 </div>
 
                                 <!-- location is searched by zip code to give a general area -->
@@ -122,7 +137,9 @@
                                         </div>
                                       </div>
                                       
-                                <button id="submitButton" type="button" class="btn teal-button">Submit</button>
+
+                                <button type="submit" class="btn teal-button" id="submit-btn">Submit</button>
+
                               </form>
                 </div>
             </div>
@@ -139,9 +156,7 @@
                     <!-- this is an example of what a listed result will look like when written to the DOM -->
                    <div class="card card-centered">
                         <div class="card-body">
-
-                            <div class="row">
-
+                            <table class="table table-sm table-hover" id=pet-table>
                             <div class="col-lg-4">
                                 <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001000/Beagle-On-White-01-400x267.jpg">
                             </div>
@@ -150,7 +165,13 @@
                                 <p class="pet-title">Lost/Found Dog/Cat</p>
                                 <div class="pet-result-info"><p>Info Dump Here</p></div>
                             </div>
-
+                            <thead>
+                                <tr>
+                                <th scope="col">Pet Matches</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
                             <!-- We can have a small map area here with a marker on the location of last seen -->
                             <div id="map" class="col-lg-4">
                                 <span>map here</span>
@@ -171,11 +192,10 @@
             <span><p class="text-center footer-text">Place sticky footer content here.</p></span>
         </div>
             
-
-    
-
-
 <script src="https://code.jquery.com/jquery.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="assets/javascript/search.js"></script>
 <script src="assets/javascript/googleMap.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDih4ABc71Ro_cOeGYzqwmlq-TdalNnILU&callback=initMap"></script>
 </body>
