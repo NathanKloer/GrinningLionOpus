@@ -133,11 +133,13 @@
                                         
                                         <div class="form-group col-md-2">
                                           <label for="inputZip">Zip</label>
-                                          <input type="text" class="form-control" id="inputZip">
+                                          <input id="address" type="text" class="form-control" id="inputZip">
                                         </div>
                                       </div>
                                       
+
                                 <button type="submit" class="btn teal-button" id="submit-btn">Submit</button>
+
                               </form>
                 </div>
             </div>
@@ -171,7 +173,7 @@
                             <tbody>
                             </tbody>
                             <!-- We can have a small map area here with a marker on the location of last seen -->
-                            <div class="col-lg-4">
+                            <div id="map" class="col-lg-4">
                                 <span>map here</span>
                             </div>
 
@@ -190,17 +192,12 @@
             <span><p class="text-center footer-text">Place sticky footer content here.</p></span>
         </div>
             
-
-    
-
-
-        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-        <script src="assets/javascript/search.js">
-        
-        
-
-        </script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="assets/javascript/search.js"></script>
+<script src="assets/javascript/googleMap.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDih4ABc71Ro_cOeGYzqwmlq-TdalNnILU&callback=initMap"></script>
 </body>
 
 </html>
