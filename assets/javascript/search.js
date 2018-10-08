@@ -39,7 +39,7 @@ config = {
       console.log("~~~~~~~~~Account Information Relavent to Search~~~~~~~~~");
       //put childSnapshot data into array
       //for (var i=0; i < 1; i++) {
-      accountsArray.push(firstName + " " + lastName, species, zip, coatColors);
+      accountsArray.push(firstName + " " + lastName, species, zip, coatColors, petName, email, comments, imageURL);
       //}
               //var coatColorArr = new Array(coatColors) 
               //var speciesArr = new Array(species) 
@@ -157,13 +157,13 @@ config = {
           //&& newSearch.tempZip === accountsArray[2] 
           ) {
               //when run by hitting submit, this will display accounts that match species. 
-              console.log("[~~Match!~~]");
-              console.log("Name: " + accountsArray[0]);
-              console.log("Species: " + newSearch.species);
-              console.log("Color: " + coatArr);
-              console.log("Color Searched: " + newSearch.color);
-              console.log("Status: " + newSearch.status);
-              console.log("Zip: " + newSearch.tempZip);
+            //   console.log("[~~Match!~~]");
+            //   console.log("Name: " + accountsArray[0]);
+            //   console.log("Species: " + newSearch.species);
+            //   console.log("Color: " + coatArr);
+            //   console.log("Color Searched: " + newSearch.color);
+            //   console.log("Status: " + newSearch.status);
+            //   console.log("Zip: " + newSearch.tempZip);
 
 
             //   // Change the HTML to reflect
@@ -188,7 +188,8 @@ config = {
             var newImageDiv = $("<div>");
             newImageDiv.addClass("col-lg-4");
             var newImage = $("<img>");
-            newImage.attr("src=" + imageURL);
+            newImage.attr("src", accountsArray[7]);
+            newImage.addClass("profile-image");
             newImageDiv.append(newImage);
 
             var newInfoDiv = $("<div>");
@@ -197,34 +198,41 @@ config = {
                 var newResultsDiv = $("<div>");
                 newResultsDiv.addClass("pet-result-info");
 
+                    var newTitleDiv = $("<div>");
+                    newTitleDiv.addClass("pet-title");
+                    var newTitleP = $("<p>");
+                    newTitleP.text(petStatus + " " + petSpecies);
+                    newTitleDiv.append(newTitleP);
+                    newResultsDiv.append(newTitleDiv);
+
                     var petNameDiv = $("<div>");
                     var petNameP = $("<p>");
-                    petNameP.text(petName);
+                    petNameP.text("Pet Name: " + accountsArray[4]);
                     petNameDiv.append(petNameP);
                     newResultsDiv.append(petNameDiv);
 
                     var personNameDiv = $("<div>");
                     var personNameP = $("<p>");
-                    personNameP.text(firstName + " " + lastName);
-                    personNameDiv.append(personNameP);
+                    personNameP.text(accountsArray[0]);
+                    personNameDiv.append("Contributor: " + accountsArray[0]);
                     newResultsDiv.append(personNameDiv);
 
 
                     var emailDiv = $("<div>");
                     var emailP = $("<p>");
-                    emailP.text(email);
+                    emailP.text("Contact: " + accountsArray[5]);
                     emailDiv.append(emailP);
                     newResultsDiv.append(emailDiv);
 
                     var colorDiv = $("<div>");
                     var colorP = $("<p>");
-                    colorP.text(coatArr);
+                    colorP.text("Coat Color: " + coatArr);
                     colorDiv.append(colorP);
                     newResultsDiv.append(colorDiv);
 
                     var commentsDiv = $("<div>");
                     var commentsP = $("<p>");
-                    commentsP.text(comments);
+                    commentsP.text("Comments: " + accountsArray[6]);
                     commentsDiv.append(commentsP);
                     newResultsDiv.append(commentsDiv);
                     

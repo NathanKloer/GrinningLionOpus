@@ -83,3 +83,7 @@
     color: red;
     display: none;
 }
+
+.profile-image {
+    width: 75%;
+}
