@@ -40,9 +40,33 @@ $(document).ready(function() {
         });
     });
 
-    // Handle submission button
-    $("#submit-form").on("click", function(event) {
+    // Handle form validaton
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+    form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
         event.preventDefault();
+        event.stopPropagation();
+        }
+        else { 
+            if ($("#upload-care").attr("value") === "") {
+                event.preventDefault();
+                $("#upload-validation").show();
+            }
+            else {
+                handleSubmit(event);
+            }
+        }
+        form.classList.add('was-validated');
+    }, false);
+    });
+
+    // Handle submission
+    function handleSubmit (event) {
+        event.preventDefault();
+
+        // Handle geocode validation
 
         // Capture inputs in variables
         type = $("#lost-or-found").attr("lostorfound");
@@ -98,6 +122,7 @@ $(document).ready(function() {
         $(".uploadcare--widget__button_type_open").css({"display": "inline-block"});
         $(".uploadcare--widget__file-name").css({"display": "none"});
         $(".uploadcare--widget__file-size").css({"display": "none"});
+        $("#upload-validation").hide();
         $("#coatColor").val("");
         $("#inputAddress").val("");
         $("#inputAddress2").val("");
@@ -106,5 +131,5 @@ $(document).ready(function() {
         $("#inputZip").val("");
         $("#comments").val("");
         // Handle errors
-    });
+    }
 });
