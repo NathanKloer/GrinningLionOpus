@@ -94,3 +94,7 @@
 .profile-image {
     width: 75%;
 }
+
+.field-head {
+    font-weight: bold;
+}
