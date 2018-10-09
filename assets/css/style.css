@@ -102,3 +102,6 @@
 .field-head {
     font-weight: bold;
 }
+#map {
+    height: 300px;
+}
