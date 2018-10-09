@@ -39,7 +39,9 @@ database.ref().on("child_added", function (childSnapshot) {
     console.log("(O)-=-=-=-=[ Account Information Relavent to Search ]=-=-=-=-(O)");
     //put childSnapshot data into array
     //for (var i=0; i < 1; i++) {
-    accountsArray.push(firstName + " " + lastName, species, zip, coatColors);
+
+    accountsArray.push(firstName + " " + lastName, species, zip, coatColors, petName, email, comments, imageURL);
+
     //JSON.stringify(accountsArray);
     //}
     //var coatColorArr = new Array(coatColors) 
@@ -73,14 +75,16 @@ database.ref().on("child_added", function (childSnapshot) {
 
     // get the options for Lost/Found, species, and make an array for the colors
 
-    $("#submit-btn").on("click", function (event) {
+
+    $("#search-btn").on("click", function (event) {
+
         //console.clear()
 
         //console.log("snapshot", firstName)
         // Handle errors
 
-
         event.preventDefault();
+
         //variables to store values
         var petStatus = ""
         var petSpecies = ""
@@ -173,17 +177,81 @@ database.ref().on("child_added", function (childSnapshot) {
             if (
                 coatResult == true && speciesResult == true
             ) {
-                var newRow = $("<tr>").append(
-                    $("<td>").text(accountsArray[0]),
-                    //<th scope="col">Species</th>,
-                    $("<td>").text(accountsArray[3]),
-                    //<th scope="col">Color</th>,
-                    $("<td>").text(newSearch.species),
-                    $("<td>").text(newSearch.tempZip),
-                )
+
+            var listingHolder = $("#empty-field");
+
+            var newPetDiv = $("<div>");
+            newPetDiv.addClass("card-body")
+
+            var newRowDiv = $("<div>");
+            newRowDiv.addClass("row");
+
+            var newImageDiv = $("<div>");
+            newImageDiv.addClass("col-lg-4");
+            var newImage = $("<img>");
+            newImage.attr("src", accountsArray[7]);
+            newImage.addClass("profile-image");
+            newImageDiv.append(newImage);
+
+            var newInfoDiv = $("<div>");
+            newInfoDiv.addClass("col-lg-4");
+
+                var newResultsDiv = $("<div>");
+                newResultsDiv.addClass("pet-result-info");
+
+                    var newTitleDiv = $("<div>");
+                    newTitleDiv.addClass("pet-title");
+                    var newTitleP = $("<p>");
+                    newTitleP.text(petStatus + " " + petSpecies);
+                    newTitleDiv.append(newTitleP);
+                    newResultsDiv.append(newTitleDiv);
+
+                    var petNameDiv = $("<div>");
+                    var petNameP = $("<p>");
+                    petNameP.text("Pet Name: " + accountsArray[4]);
+                    petNameDiv.append(petNameP);
+                    newResultsDiv.append(petNameDiv);
+
+                    var personNameDiv = $("<div>");
+                    var personNameP = $("<p>");
+                    personNameP.text(accountsArray[0]);
+                    personNameDiv.append("Contributor: " + accountsArray[0]);
+                    newResultsDiv.append(personNameDiv);
+
+
+                    var emailDiv = $("<div>");
+                    var emailP = $("<p>");
+                    emailP.text("Contact: " + accountsArray[5]);
+                    emailDiv.append(emailP);
+                    newResultsDiv.append(emailDiv);
+
+                    var colorDiv = $("<div>");
+                    var colorP = $("<p>");
+                    colorP.text("Coat Color: " + coatArr);
+                    colorDiv.append(colorP);
+                    newResultsDiv.append(colorDiv);
+
+                    var commentsDiv = $("<div>");
+                    var commentsP = $("<p>");
+                    commentsP.text("Comments: " + accountsArray[6]);
+                    commentsDiv.append(commentsP);
+                    newResultsDiv.append(commentsDiv);
+                    
+                newInfoDiv.append(newResultsDiv);
+
+            var newMapDiv = $("<div>");
+            newMapDiv.addClass("col-lg-4 map");
+            //add map
+
+            newRowDiv.append(newImageDiv);
+            newRowDiv.append(newInfoDiv);
+            newRowDiv.append(newMapDiv);
+            newPetDiv.append(newRowDiv);  
+            listingHolder.append(newPetDiv);   
             };
 
-            $("#pet-table > tbody").append(newRow);
+            // $("#pet-table > tbody").append(newRow);
+
             //else {console.log("color 3 No Match")
             //console.log("Searched Color: " + newSearch.color[2])
             //console.log("Account: " + accountsArray)}}
