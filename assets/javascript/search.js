@@ -39,7 +39,9 @@ database.ref().on("child_added", function (childSnapshot) {
     console.log("(O)-=-=-=-=[ Account Information Relavent to Search ]=-=-=-=-(O)");
     //put childSnapshot data into array
     //for (var i=0; i < 1; i++) {
+
     accountsArray.push(firstName + " " + lastName, species, zip, coatColors, petName, email, comments, imageURL);
+
     //JSON.stringify(accountsArray);
     //}
     //var coatColorArr = new Array(coatColors) 
@@ -73,7 +75,9 @@ database.ref().on("child_added", function (childSnapshot) {
 
     // get the options for Lost/Found, species, and make an array for the colors
 
+
     $("#search-btn").on("click", function (event) {
+
         //console.clear()
 
         //console.log("snapshot", firstName)
@@ -173,6 +177,7 @@ database.ref().on("child_added", function (childSnapshot) {
             if (
                 coatResult == true && speciesResult == true
             ) {
+
             var listingHolder = $("#empty-field");
 
             var newPetDiv = $("<div>");
@@ -246,6 +251,7 @@ database.ref().on("child_added", function (childSnapshot) {
             };
 
             // $("#pet-table > tbody").append(newRow);
+
             //else {console.log("color 3 No Match")
             //console.log("Searched Color: " + newSearch.color[2])
             //console.log("Account: " + accountsArray)}}
