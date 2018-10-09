@@ -40,7 +40,8 @@ database.ref().on("child_added", function (childSnapshot) {
     //put childSnapshot data into array
     //for (var i=0; i < 1; i++) {
 
-    accountsArray.push(firstName + " " + lastName, species, zip, coatColors, petName, email, comments, imageURL);
+    accountsArray.push(firstName + " " + lastName, species, zip, coatColors, petName, email, comments,
+     imageURL, address, addressTwo, city, state, zip);
 
     //JSON.stringify(accountsArray);
     //}
@@ -194,7 +195,7 @@ database.ref().on("child_added", function (childSnapshot) {
             newImageDiv.append(newImage);
 
             var newInfoDiv = $("<div>");
-            newInfoDiv.addClass("col-lg-4");
+            newInfoDiv.addClass("col-lg-8");
 
                 var newResultsDiv = $("<div>");
                 newResultsDiv.addClass("pet-result-info");
@@ -230,6 +231,24 @@ database.ref().on("child_added", function (childSnapshot) {
                     colorP.text("Coat Color: " + coatArr);
                     colorDiv.append(colorP);
                     newResultsDiv.append(colorDiv);
+
+                    var addressDiv = $("<div>");
+                    var mainaddressDiv = $("<div>");
+                    var mainAddressP = $("<p>");
+                    mainAddressP.text("Last Seen Near: " + accountsArray[8]);
+                    mainaddressDiv.append(mainAddressP);
+                    addressDiv.append(mainaddressDiv);
+                    var secondaddressDiv = $("<div>");
+                    var secondAddressP = $("<p>");
+                    secondAddressP.text(accountsArray[9]);
+                    secondaddressDiv.append(secondAddressP);
+                    addressDiv.append(secondaddressDiv);
+                    var lastaddressDiv = $("<div>");
+                    var lastAddressP = $("<p>");
+                    lastAddressP.text(accountsArray[10] + " " + accountsArray[11] + " " + accountsArray[12]);
+                    lastaddressDiv.append(lastAddressP);
+                    addressDiv.append(lastaddressDiv);
+                    newResultsDiv.append(addressDiv);
 
                     var commentsDiv = $("<div>");
                     var commentsP = $("<p>");
