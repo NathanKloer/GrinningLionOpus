@@ -6,7 +6,7 @@ The profiles created are searchable by all users by features like species and co
 
 The user can start by navigationg to the lost or found page to create a profile or immediately searching through existing profiles.
 
-This project is hosted at: https://github.com/NathanKloer/GrinningLionOpus.
+This project is hosted at: https://nathankloer.github.io/GrinningLionOpus/.
 
 It is maintained by: Nadine Hernandez, Johnny King, Nathan Kloer, and Isaac Motley
 
