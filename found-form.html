@@ -4,50 +4,70 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <title>Found Pets</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>Found Pets</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
-        <a class="navbar-brand" href="#">Pet Poster</a>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="found-form.html">Found</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="lost-form.html">Lost</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">Search</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+          <a class="navbar-brand" href="index.html">Pet Poster</a>
 
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid jumbo-bg-img">
-        <div class="container">
-            <h1 class="text-center title">Pet Poster</h1>
-            <p class="text-center top-text">The most important family reunion.</p>
-            <p class="text-center top-text">Find lost pets. Report found pets.</p>
-            <div class="top-spacer"></div>
-            <p class="text-center">
-                <a class="btn btn-lg teal-button" href="data.html" role="button">Data</a>
-            </p>
-            <p class="text-center top-text" style="margin-bottom: .5rem">Where are pets lost and found?</p>
+                <div class="pos-f-t">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                      <div class="p-4">
+                          <ul class="navbar-nav mr-auto">
+                              <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item active">
+                                <a class="nav-link" href="found-form.html">Found</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="lost-form.html">Lost</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="search.html">Search</a>
+                              </li>
+                            </ul>
+                      </div>
+                    </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="found-form.html">Found</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lost-form.html">Lost</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="search.html">Search</a>
+                    </li>
+                  </ul>
+                </div>
+        </nav>
+              
+        <!-- Jumbotron -->
+        <div class="jumbotron jumbotron-fluid jumbo-bg-img">
+            <div class="container">
+                <h1 class="text-center title">Pet Poster</h1>
+                <p class="text-center top-text">The most important family reunion.</p>
+                <p class="text-center top-text">Find lost pets. Report found pets.</p>
+            </div>
         </div>
-    </div>
 
     <div class="main">
 
@@ -63,10 +83,10 @@
                         </div>
                         <!-- User's Name -->
                         <div class="form-group">
-                            <label for="contributorName">Contributor</label>
+                            <label for="contributorName" class="field-head">Contributor</label>
                             <div class="row">
                                 <div class="col">
-                                    <label for="firstName">First Name</label>
+                                    <label for="firstName" class="field-head">First Name</label>
                                     <input type="text" class="form-control" id="firstName" placeholder="First name" name="firstName" required>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -76,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <label for="lastName">Last Name</label>
+                                    <label for="lastName" class="field-head">Last Name</label>
                                     <input type="text" class="form-control" id="lastName" placeholder="Last name" name="lastName" required>
                                     <div class="valid-feedback">
                                         Looks good!
@@ -90,7 +110,7 @@
 
                         <!-- User's contact info -->
                         <div class="form-group">
-                            <label for="InputEmail1">Email Address</label>
+                            <label for="InputEmail1" class="field-head">Email Address</label>
                             <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email" required>
                             <div class="valid-feedback">
                                 Looks good!
@@ -102,8 +122,9 @@
 
                         <!-- Pet's Name -->
                         <div class="form-group">
-                            <label for="formGroupExampleInput">Pet Name</label>
+                            <label for="formGroupExampleInput" class="field-head">Pet Name</label>
                             <input type="text" class="form-control" id="petName" placeholder="Sunshine" required>
+                            <small class="form-text text-muted">If N/A enter "none".</small>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -114,7 +135,7 @@
 
                         <!-- Assuming we're going simple with cat or dog only -->
                         <div class="form-group">
-                            <label for="speciesSelection">Species</label>
+                            <label for="speciesSelection" class="field-head">Species</label>
                             <select class="form-control" id="selectSpecies" required>
                                 <option>Cat</option>
                                 <option>Dog</option>
@@ -137,7 +158,7 @@
 
                         <!-- Color inputs with one or multiple inputs -->
                         <div class="form-group">
-                            <div><label for="coatColor">Coat Color(s)</label></div>
+                            <div><label for="coatColor" class="field-head">Coat Color(s)</label></div>
                             <select class="custom-select" id="coat-color" multiple required>
                                 <option value="brown">Brown</option>
                                 <option value="black">Black</option>
@@ -147,6 +168,7 @@
                                 <option value="Gray">Gray</option>
                                 <option value="Other">Other</option>
                             </select>
+                            <small class="form-text text-muted">Hold "ctrl" while clicking for multiple selections.</small>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -157,9 +179,10 @@
 
                         <!-- Address form with alternate button so that user can input current location via maps api -->
                         <div class="form-group">
-                            <div><label for="lastSeenGroup">Last Seen At/Near This Address</label>
+                            <div>
+                                <label for="lastSeenGroup" class="field-head">Last Seen At/Near This Address</label>
                             </div>
-                            <label for="inputAddress">Address</label>
+                            <label for="inputAddress" class="field-head">Address</label>
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
                             <div class="valid-feedback">
                                 Looks good!
@@ -169,13 +192,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputAddress2">Address 2</label>
+                            <label for="inputAddress2" class="field-head">Address 2</label>
                             <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity" required>
+                                <label for="inputCity" class="field-head">City</label>
+                                <input type="text" class="form-control" id="inputCity">
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -216,7 +239,7 @@
 
                         <!-- Place for addition info for people to read when browsing listings on their own -->
                         <div class="form-group">
-                            <label for="comments">Comments</label>
+                            <label for="comments" class="field-head">Comments</label>
                             <textarea class="form-control" id="comments" rows="3" placeholder="Notable Features, Health of animal, etc."></textarea>
                         </div>
 
