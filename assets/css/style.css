@@ -67,6 +67,13 @@
     margin: .5rem;
 }
 
+.uploadcare--widget__button {
+    background-color: #f6cd61;
+    color: white;
+    font-weight: bold;
+    margin: .5rem;
+}
+
 .card-head-styled {
     background-color: #3da4ab;
     color: white;
