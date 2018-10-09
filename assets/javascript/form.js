@@ -30,6 +30,7 @@ $(document).ready(function() {
     var zip = 0;
     var comments = "";
 
+    /*
     // Handle geolocation button
     $("#geolocation").on("click", function(event) {
         navigator.geolocation.getCurrentPosition(function(position) {
@@ -39,32 +40,31 @@ $(document).ready(function() {
             console.log(latitude);
         });
     });
+    */
 
     // Handle form validaton
     var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
     form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
+            form.classList.add('was-validated');
         }
-        else { 
-            if ($("#upload-care").attr("value") === "") {
-                event.preventDefault();
-                $("#upload-validation").show();
-            }
-            else {
-                handleSubmit(event);
-            }
+        else if ($("#upload-care").attr("value") === "") {
+            event.preventDefault();
+            $("#upload-validation").show();
+            form.classList.add('was-validated');
         }
-        form.classList.add('was-validated');
+        else {
+            event.preventDefault();
+            handleSubmit(event);
+        }
     }, false);
     });
 
     // Handle submission
-    function handleSubmit (event) {
-        event.preventDefault();
+    function handleSubmit(event) {
 
         // Handle geocode validation
 
@@ -110,9 +110,8 @@ $(document).ready(function() {
         // Store in Firebase
         database.ref().push(newPet);
 
-        // Display success modal for 5 seconds
-
-        // Clear form
+        // Reset form
+        $("form").removeClass("was-validated");
         $("#firstName").val("");
         $("#lastName").val("");
         $("#emailInput").val("");
@@ -120,16 +119,22 @@ $(document).ready(function() {
         $("#selectSpecies").val("");
         $("#upload-care").attr("value", "");
         $(".uploadcare--widget__button_type_open").css({"display": "inline-block"});
-        $(".uploadcare--widget__file-name").css({"display": "none"});
+        $(".uploadcare--widget__file-name").hide();
         $(".uploadcare--widget__file-size").css({"display": "none"});
         $("#upload-validation").hide();
-        $("#coatColor").val("");
+        $("#coatColor").prop('selectedIndex', 0);
         $("#inputAddress").val("");
         $("#inputAddress2").val("");
         $("#inputCity").val("");
         $("#inputState").val("");
         $("#inputZip").val("");
         $("#comments").val("");
-        // Handle errors
+
+        // Display success alert for 3 seconds
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("#success-message").show();
+        setTimeout(function() {
+            $("#success-message").hide();
+        }, 3000);
     }
 });

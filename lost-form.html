@@ -12,22 +12,23 @@
 </head>
 
 <body>
+
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark nav-styled">
 
-          <a class="navbar-brand" href="index.html">Found Pets</a>
+          <a class="navbar-brand" href="index.html">Pet Poster</a>
 
                 <div class="pos-f-t">
                     <div class="collapse" id="navbarToggleExternalContent">
                       <div class="p-4">
                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item active">
+                              <li class="nav-item">
                                 <a class="nav-link" href="index.html">Home</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link" href="found-form.html">Found</a>
                               </li>
-                              <li class="nav-item">
+                              <li class="nav-item active">
                                   <a class="nav-link" href="lost-form.html">Lost</a>
                               </li>
                               <li class="nav-item">
@@ -59,10 +60,10 @@
                 </div>
         </nav>
               
-        <!-- jumbotron -->
+        <!-- Jumbotron -->
         <div class="jumbotron jumbotron-fluid jumbo-bg-img">
             <div class="container">
-                <h1 class="text-center title">Found Pets</h1>
+                <h1 class="text-center title">Pet Poster</h1>
                 <p class="text-center top-text">The most important family reunion.</p>
                 <p class="text-center top-text">Find lost pets. Report found pets.</p>
             </div>
@@ -73,18 +74,16 @@
         <div class="container container-fluid">
             <div class="card">
                 <div class="card-header card-head-styled">
-                    Lost Pet Profile
+                    Found Pet Profile
                 </div>
                 <div class="card-body">
-                    <!-- <form>
-                        <label for="choose">Would you prefer a banana or a cherry?</label>
-                        <input id="choose" name="i_like" required>
-                        <button>Submit</button>
-                    </form> -->
                     <form class="needs-validation" id="lost-or-found" lostorfound="lost" novalidate>
+                        <div class="alert alert-success" role="alert" id="success-message">
+                             You have submitted the form sucessfully.
+                        </div>
                         <!-- User's Name -->
                         <div class="form-group">
-                            <label for="contributorName"  class="field-head">Contributor</label>
+                            <label for="contributorName" class="field-head">Contributor</label>
                             <div class="row">
                                 <div class="col">
                                     <label for="firstName" class="field-head">First Name</label>
@@ -125,6 +124,7 @@
                         <div class="form-group">
                             <label for="formGroupExampleInput" class="field-head">Pet Name</label>
                             <input type="text" class="form-control" id="petName" placeholder="Sunshine" required>
+                            <small class="form-text text-muted">If N/A enter "none".</small>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -168,6 +168,7 @@
                                 <option value="Gray">Gray</option>
                                 <option value="Other">Other</option>
                             </select>
+                            <small class="form-text text-muted">Hold "ctrl" while clicking for multiple selections.</small>
                             <div class="valid-feedback">
                                 Looks good!
                             </div>
@@ -182,7 +183,13 @@
                                 <label for="lastSeenGroup" class="field-head">Last Seen At/Near This Address</label>
                             </div>
                             <label for="inputAddress" class="field-head">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please enter an address.
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress2" class="field-head">Address 2</label>
@@ -192,12 +199,18 @@
                             <div class="form-group col-md-6">
                                 <label for="inputCity" class="field-head">City</label>
                                 <input type="text" class="form-control" id="inputCity">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter an city.
+                                </div>
                             </div>
 
                             <!-- I only included Georgia and neighboring states since this is an Atlanta Web App -->
                             <div class="form-group col-md-4">
-                                <label for="inputState" class="field-head">State</label>
-                                <select id="inputState" class="form-control">
+                                <label for="inputState">State</label>
+                                <select id="inputState" class="form-control" required>
                                     <option selected>Georgia</option>
                                     <option>Alabama</option>
                                     <option>Florida</option>
@@ -205,11 +218,22 @@
                                     <option>North Carolina</option>
                                     <option>South Carolina</option>
                                 </select>
-                                <small class="form-text text-muted" class="field-head">Hold "ctrl" while clicking for multiple selections.</small>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please select a state.
+                                </div>
                             </div>
                             <div class="form-group col-md-2">
-                                <label for="inputZip" class="field-head">Zip</label>
-                                <input type="text" class="form-control" id="inputZip">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="inputZip" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a zip.
+                                </div>
                             </div>
                         </div>
 
@@ -229,7 +253,7 @@
     <!-- Footer -->
     <div class="footer navbar-fixed-bottom my-footer">
         <span>
-            <p class="text-center footer-text"></p>
+            <p class="text-center footer-text">Pet Poster</p>
         </span>
     </div>
 
