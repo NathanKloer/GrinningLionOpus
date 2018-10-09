@@ -8,6 +8,8 @@ The user can start by navigationg to the lost or found page to create a profile 
 
 This project is hosted at: https://nathankloer.github.io/GrinningLionOpus/.
 
+A Google Drive slide show on the project can be found at: https://docs.google.com/presentation/d/1sRi0TvDb6vxIXRGRc2uJ9LvEY6ajBZdF3G6PYeFMCoQ/edit?usp=sharing.
+
 It is maintained by: Nadine Hernandez, Johnny King, Nathan Kloer, and Isaac Motley
 
 Project Utilizes:
